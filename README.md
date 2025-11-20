@@ -1,11 +1,11 @@
-🌳 Annex Tree Map
+# 🌳 Annex Tree Map
 
 Community-Sourced Urban Forest Data for Toronto’s Annex Neighbourhood
 https://annextrees.xyz.am
 
 https://annextreemap.xyz.am/
 
-📍 Overview
+# 📍 Overview
 
 The Annex Tree Map is a community-driven project to visualize, maintain, and expand the historical tree inventory collected in Toronto’s Annex neighbourhood between 2010 and 2014.
 
@@ -23,14 +23,14 @@ Tools for generating new GeoJSON entries
 
 Community guidelines for contributions
 
-🌐 Live Sites
+# 🌐 Live Sites
 1. Project Homepage & Documentation
 
 📄 https://annextrees.xyz.am
 
 Contains project info, data history, contribution guide, JSON generator, and more.
 
-2. Interactive Map
+# 2. Interactive Map
 
 🗺️ https://annextreemap.xyz.am
 
@@ -42,7 +42,7 @@ Street
 
 Tree size (DBH ranges)
 
-🌲 Data Source & Credits
+# 🌲 Data Source & Credits
 
 The dataset originates from the Annex Residents’ Association (ARA) Tree Mapping Project (2010–2014).
 Volunteers collected:
@@ -65,13 +65,13 @@ Original dataset was published via the ARA website and exported as GeoJSON.
 
 This repository preserves the data and provides tools for curation, correction, and expansion.
 
-📁 Repo Structure
+# 📁 Repo Structure
 /data
    annex-trees.json     → Main GeoJSON dataset
 
 README.md               → You are here
 
-🛠️ Contributing
+# 🛠️ Contributing
 
 We welcome pull requests for:
 
@@ -97,7 +97,7 @@ Describe the problem (tree_no, location, expected value)
 
 Submit a Pull Request with the fix
 
-🧰 Adding New Trees (JSON Generator)
+# 🧰 Adding New Trees (JSON Generator)
 
 Visit:
 
@@ -152,7 +152,7 @@ You can embed the tree map in any site using:
 ```
 
 
-🧪 Data Quality Notes
+# 🧪 Data Quality Notes
 
 During cleaning, several issues were identified:
 
@@ -168,11 +168,11 @@ Duplicate coordinates due to surveying from the same point
 
 Issues have been documented in GitHub for transparency.
 
-📸 Screenshot
+# 📸 Screenshot
 
 ![Annex Tree Map Screenshot](https://github.com/ptoone/annex-tree-map/blob/main/data/annextrees.png?raw=true)
 
-📝 License
+# 📝 License
 
 This project is open data.
 Attribution to the Annex Residents’ Association is appreciated.
