@@ -10139,4 +10139,3 @@
 { "type": "Feature", "properties": { "Date": "2014", "tree_no": "581", "house_number": "62", "street_code": "Admiral Rd", "species_code": "yewspp", "tree_name": "Yew species", "n_o_s": "3.0", "DBH": "7.3", "total_height": "5.0", "Comments": "", "X coordinate": -79.401043, "Y coordinate": 43.672413 }, "geometry": { "type": "Point", "coordinates": [ -79.401043, 43.672413 ] } }
 ]
 }
-);
