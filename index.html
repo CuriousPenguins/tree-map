@@ -1,0 +1,1131 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Annex Tree Map – Project Info & Tools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  >
+
+  <style>
+    body {
+      background-color: #f8fafb;
+    }
+    .hero {
+      background: linear-gradient(135deg, #00b46f 0%, #008f82 60%, #00698f 100%);
+      color: #fff;
+    }
+    pre,
+    code,
+    textarea.form-control {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    .card-header {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Annex Tree Map</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="https://annextreemap.xyz.am/">View Map</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/ptoone/annex-tree-map" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero py-5 mb-4">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <h1 class="display-5 fw-bold mb-3">Annex Tree Map</h1>
+          <p class="lead mb-3">
+            An open, community-maintained map of every tree surveyed in Toronto’s Annex neighbourhood.
+          </p>
+          <p class="mb-4">
+            The data comes from a neighbourhood tree survey and is published as open GeoJSON
+            so anyone can explore it, embed the map, or help improve the dataset.
+          </p>
+          <a href="https://annextreemap.xyz.am/" class="btn btn-light text-dark me-2 mb-2">
+            🌳 Open the Interactive Map
+          </a>
+          <a href="https://github.com/ptoone/annex-tree-map" target="_blank" rel="noopener"
+             class="btn btn-outline-light mb-2">
+            &lt;/&gt; View on GitHub
+          </a>
+        </div>
+        <div class="col-lg-5">
+          <div class="bg-white text-dark rounded-3 shadow-sm p-3">
+            <h2 class="h5 fw-bold mb-2">What’s in the data?</h2>
+            <ul class="mb-0 ps-3">
+              <li>Tree species &amp; common name</li>
+              <li>Street address and survey year</li>
+              <li>DBH (Diameter at Breast Height)</li>
+              <li>Total height and number of stems</li>
+              <li>Comments from the original survey</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container mb-5">
+
+    <!-- Project & Contribution section -->
+    <div class="row g-4 mb-4">
+      <div class="col-lg-7">
+        <div class="card shadow-sm">
+          <div class="card-header">
+            About the Project
+          </div>
+          <div class="card-body">
+            <p>
+              This project republishes the Annex tree survey as an interactive map built with
+              <strong>OpenStreetMap</strong>, <strong>Leaflet</strong>, and open GeoJSON data.
+              The goal is to make it easy for residents, researchers, and city enthusiasts to
+              explore the urban forest of the Annex.
+            </p>
+            <p>
+              The data is stored in a single GeoJSON file:
+            </p>
+            <pre class="bg-light border rounded p-2 mb-3"><code>https://raw.githubusercontent.com/ptoone/annex-tree-map/refs/heads/main/data/annex-trees.json</code></pre>
+            <p class="mb-0">
+              Everyone is welcome to help correct errors, add missing details, or build new tools
+              that reuse this dataset.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="card shadow-sm">
+          <div class="card-header">
+            How to Contribute on GitHub
+          </div>
+          <div class="card-body">
+            <ol class="mb-3">
+              <li>
+                Visit the repo:
+                <a href="https://github.com/ptoone/annex-tree-map" target="_blank" rel="noopener">
+                  github.com/ptoone/annex-tree-map
+                </a>
+              </li>
+              <li>Click <strong>Fork</strong> to create your own copy.</li>
+              <li>Edit <code>data/annex-trees.json</code> (or other files) in your fork.</li>
+              <li>Commit your changes with a short description.</li>
+              <li>Open a <strong>Pull Request</strong> explaining what you fixed or added.</li>
+            </ol>
+            <p class="small text-muted mb-0">
+              Tip: if you’re editing tree data, try to keep the GeoJSON format exactly the same
+              as existing records (see the JSON generator tool below).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data source & credits -->
+    <div class="row g-4 mb-4">
+      <div class="col-lg-12">
+        <div class="card shadow-sm">
+          <div class="card-header">
+            Data Source &amp; Credits
+          </div>
+          <div class="card-body">
+            <p>
+              The Annex tree data was originally collected as part of a neighbourhood tree survey
+              in Toronto’s Annex, carried out by local volunteers and community members between
+              approximately <strong>2010 and 2014</strong>.
+            </p>
+            <p>
+             Volunteers from 
+  <a href="https://www.theara.org" target="_blank" rel="noopener">The Ara</a> 
+  recorded species, address, DBH (Diameter at Breast Height), height, and other details for each tree, 
+  and the results were published as an interactive map on a community website.
+            </p>
+            <p>
+              This GitHub project:
+            </p>
+            <ul>
+              <li>Republishes the survey data in an open GeoJSON format.</li>
+              <li>Provides an updated   <a href="https://annextreemap.xyz.am" target="_blank" rel="noopener">interactive map</a> using OpenStreetMap and Leaflet.</li>
+              <li>Invites the community to help clean, document, and extend the dataset.</li>
+            </ul>
+            <p class="mb-0">
+              If you use this dataset or embed the map, please acknowledge the original survey
+              organizers and volunteers, and consider contributing improvements back via
+              <a href="https://github.com/ptoone/annex-tree-map" target="_blank" rel="noopener">GitHub</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Embed options + JSON generator -->
+    <div class="row g-4 mb-4">
+      <div class="col-lg-6">
+        <div class="card shadow-sm h-100">
+          <div class="card-header">
+            Embed the Annex Tree Map
+          </div>
+          <div class="card-body">
+            <p>
+              You can embed the map on your own website using an <code>&lt;iframe&gt;</code>.
+            </p>
+
+            <div class="mb-3">
+              <label for="embedUrl" class="form-label">Map URL</label>
+              <input type="text" class="form-control" id="embedUrl"
+                     value="https://annextreemap.xyz.am/">
+            </div>
+
+            <div class="mb-2 d-flex justify-content-between align-items-center">
+              <label for="embedCode" class="form-label mb-0">Embed code</label>
+              <button type="button" class="btn btn-sm btn-outline-secondary" id="copyEmbedBtn">
+                Copy
+              </button>
+            </div>
+            <textarea class="form-control" id="embedCode" rows="4" readonly></textarea>
+
+            <p class="small text-muted mt-3 mb-0">
+              You can adjust the <code>width</code>, <code>height</code>, or wrap the iframe
+              in a responsive container in your own layout.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- JSON generator tool -->
+<div class="col-lg-6">
+  <div class="card shadow-sm h-100">
+    <div class="card-header">
+      JSON Feature Generator (GeoJSON)
+    </div>
+    <div class="card-body">
+      <p>
+        Use this form to generate a new GeoJSON <code>Feature</code> entry that matches
+        the existing Annex tree data format. You can then paste it into
+        <code>annex-trees.json</code>.
+      </p>
+
+      <form id="jsonForm" class="row g-2">
+        <div class="col-6">
+          <label class="form-label">Year (Date)</label>
+          <input type="text" class="form-control" name="Date" placeholder="2012">
+        </div>
+        <div class="col-6">
+          <label class="form-label">Tree #</label>
+          <input type="text" class="form-control" name="tree_no" placeholder="159">
+        </div>
+
+        <div class="col-6">
+          <label class="form-label">House number</label>
+          <input type="text" class="form-control" name="house_number" placeholder="98">
+        </div>
+        <div class="col-6">
+          <label class="form-label">Street</label>
+          <input type="text" class="form-control" name="street_code" placeholder="Kendal Ave">
+        </div>
+
+        <div class="col-6">
+          <label class="form-label">Species code</label>
+          <input type="text" class="form-control" name="species_code" placeholder="aldspp">
+        </div>
+        <div class="col-6">
+          <label class="form-label">Tree name</label>
+          <input type="text" class="form-control" name="tree_name" placeholder="Alder Species">
+        </div>
+
+        <div class="col-6">
+          <label class="form-label">Number of stems (n_o_s)</label>
+          <input type="text" class="form-control" name="n_o_s" placeholder="8.0">
+        </div>
+        <div class="col-6">
+          <label class="form-label">DBH (cm)</label>
+          <input type="text" class="form-control" name="DBH" placeholder="6.2">
+          <div class="form-text">DBH = Diameter at Breast Height.</div>
+        </div>
+
+        <div class="col-6">
+          <label class="form-label">Total height (m)</label>
+          <input type="text" class="form-control" name="total_height" placeholder="5.0">
+        </div>
+        <div class="col-6">
+          <label class="form-label">Comments</label>
+          <input type="text" class="form-control" name="Comments" placeholder="">
+        </div>
+
+        <div class="col-6">
+          <label class="form-label">Longitude (X coordinate)</label>
+          <input type="text" class="form-control" name="X coordinate" placeholder="-79.409451">
+        </div>
+        <div class="col-6">
+          <label class="form-label">Latitude (Y coordinate)</label>
+          <input type="text" class="form-control" name="Y coordinate" placeholder="43.673255">
+          <div class="form-text">
+            Need help finding coordinates? Use
+            <a href="https://coordinates.xyz.am/" target="_blank" rel="noopener">
+              coordinates.xyz.am
+            </a>.
+          </div>
+        </div>
+
+        <div class="col-12 mt-2">
+          <button type="submit" class="btn btn-success">
+            Generate JSON
+          </button>
+          <button type="button" class="btn btn-outline-secondary ms-2" id="clearFormBtn">
+            Clear form
+          </button>
+        </div>
+      </form>
+
+      <div class="mt-3 d-flex justify-content-between align-items-center">
+        <label for="jsonOutput" class="form-label mb-0">Generated GeoJSON Feature</label>
+        <button type="button" class="btn btn-sm btn-outline-secondary" id="copyJsonBtn">
+          Copy JSON
+        </button>
+      </div>
+      <textarea class="form-control" id="jsonOutput" rows="8" readonly></textarea>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Questions About Getting Involved -->
+<section class="mt-5">
+  <h2 class="h3 mb-4">Questions about getting involved</h2>
+
+  <div class="accordion" id="involvementAccordion">
+
+    <!-- Q1: How can I help? -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="involvementHeadingOne">
+        <button class="accordion-button" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#involvementCollapseOne"
+                aria-expanded="true"
+                aria-controls="involvementCollapseOne">
+          How can I help with the Annex Tree Map?
+        </button>
+      </h2>
+      <div id="involvementCollapseOne"
+           class="accordion-collapse collapse show"
+           aria-labelledby="involvementHeadingOne"
+           data-bs-parent="#involvementAccordion">
+        <div class="accordion-body">
+          You can help by submitting new trees, updating details for existing ones
+          (like height, species, or condition), or sharing the map with your neighbours
+          and local groups. If you’re comfortable with basic measurements, you can also
+          help us improve data quality by checking locations, DBH, and heights on your street.
+        </div>
+      </div>
+    </div>
+    <!-- End Accordion Item 1 -->
+
+    <!-- Q2: GitHub account? -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="involvementHeadingTwo">
+        <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#involvementCollapseTwo"
+                aria-expanded="false"
+                aria-controls="involvementCollapseTwo">
+          Do I need a GitHub account to edit the data?
+        </button>
+      </h2>
+      <div id="involvementCollapseTwo"
+           class="accordion-collapse collapse"
+           aria-labelledby="involvementHeadingTwo"
+           data-bs-parent="#involvementAccordion">
+        <div class="accordion-body">
+          <p>
+            No, you don’t <em>need</em> a GitHub account, but it helps if you’d like to edit
+            the data directly.
+          </p>
+          <p>
+            The tree data is public and stored in this JSON file:<br>
+            <a href="https://raw.githubusercontent.com/ptoone/annex-tree-map/refs/heads/main/data/annex-trees.json"
+               target="_blank" rel="noopener">
+              annex-trees.json (view the raw data)
+            </a>
+          </p>
+          <p class="mb-0">
+            If you’re not comfortable editing files on GitHub, you can copy the relevant part
+            of the JSON, make your edits (for example, adding a new tree entry or updating one),
+            and send the updated snippet to someone with access to the repository to apply it.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End Accordion Item 2 -->
+
+    <!-- Q3: Coordinates -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="involvementHeadingThree">
+        <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#involvementCollapseThree"
+                aria-expanded="false"
+                aria-controls="involvementCollapseThree">
+          How can I get accurate coordinates for a tree?
+        </button>
+      </h2>
+      <div id="involvementCollapseThree"
+           class="accordion-collapse collapse"
+           aria-labelledby="involvementHeadingThree"
+           data-bs-parent="#involvementAccordion">
+        <div class="accordion-body">
+          <p>
+            Any modern smartphone can give you latitude/longitude using its built-in map or
+            location apps.
+          </p>
+          <p class="mb-0">
+            For a quick and easy option, you can also use:<br>
+            <a href="https://coordinates.xyz.am" target="_blank" rel="noopener">
+              coordinates.xyz.am
+            </a><br>
+            Stand near the tree, grab the coordinates, and paste them into the JSON entry or
+            the submission form.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End Accordion Item 3 -->
+
+    <!-- Q4: Workshops / getting involved further -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="involvementHeadingFour">
+        <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#involvementCollapseFour"
+                aria-expanded="false"
+                aria-controls="involvementCollapseFour">
+          Are there workshops or group sessions I can join?
+        </button>
+      </h2>
+      <div id="involvementCollapseFour"
+           class="accordion-collapse collapse"
+           aria-labelledby="involvementHeadingFour"
+           data-bs-parent="#involvementAccordion">
+        <div class="accordion-body">
+          <p>
+            We are considering online workshops and possibly local walks in the future to
+            help people learn how to measure trees, collect data, and contribute to the map.
+          </p>
+          <p class="mb-0">
+            Check back on this page for updates, or get in touch if you’d like to help
+            organize or host a session.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End Accordion Item 4 -->
+
+    <!-- Q5: Export / embed the map -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="involvementHeadingFive">
+        <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#involvementCollapseFive"
+                aria-expanded="false"
+                aria-controls="involvementCollapseFive">
+          Can I export or embed the map on another website?
+        </button>
+      </h2>
+      <div id="involvementCollapseFive"
+           class="accordion-collapse collapse"
+           aria-labelledby="involvementHeadingFive"
+           data-bs-parent="#involvementAccordion">
+        <div class="accordion-body">
+          <p>
+            Yes. You can grab the map’s <strong>embed code</strong> and add it to any webpage
+            as an iframe, so you can display the Annex Tree Map on your own site.
+          </p>
+          <p class="mb-0">
+            This is a great way for local groups, schools, and neighbourhood projects to
+            share the same data without having to maintain their own map.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End Accordion Item 5 -->
+
+    <!-- Q6: Use with Google Maps / other tools -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="involvementHeadingSix">
+        <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#involvementCollapseSix"
+                aria-expanded="false"
+                aria-controls="involvementCollapseSix">
+          Can I use this data with Google Maps or other mapping tools?
+        </button>
+      </h2>
+      <div id="involvementCollapseSix"
+           class="accordion-collapse collapse"
+           aria-labelledby="involvementHeadingSix"
+           data-bs-parent="#involvementAccordion">
+        <div class="accordion-body">
+          <p>
+            Yes. While this project uses open-source mapping tools for various reasons,
+            the underlying data is just JSON and can be used with Google Maps or other
+            mapping platforms.
+          </p>
+          <p class="mb-0">
+            You can download or reference the JSON file and load it into your own map,
+            visualization, or analysis workflow if you’d like to build on the project.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End Accordion Item 6 -->
+
+    <!-- Q7: How to add a tree -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="involvementHeadingSeven">
+        <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#involvementCollapseSeven"
+                aria-expanded="false"
+                aria-controls="involvementCollapseSeven">
+          How can I add a tree to the map?
+        </button>
+      </h2>
+      <div id="involvementCollapseSeven"
+           class="accordion-collapse collapse"
+           aria-labelledby="involvementHeadingSeven"
+           data-bs-parent="#involvementAccordion">
+        <div class="accordion-body">
+          <p>
+            First, gather the basic information: location (coordinates), species (if known),
+            DBH, approximate height, and any notes about condition or context.
+          </p>
+          <p>
+            On this page there is a <strong>JSON generator</strong> that will help you create a
+            properly formatted entry. Once you have your JSON snippet, you can:
+          </p>
+          <ul>
+            <li>Paste it into the <code>annex-trees.json</code> file (if you’re editing via GitHub), or</li>
+            <li>Send the JSON snippet to someone with repository access so they can add it for you.</li>
+          </ul>
+          <p class="mb-0">
+            As long as the JSON is valid and includes the required fields, we can add your tree
+            to the next update of the map.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End Accordion Item 7 -->
+    
+<!-- Q: Where can I see what needs work? (Data issues & tasks) -->
+<div class="accordion-item">
+  <h2 class="accordion-header" id="involvementHeadingIssues">
+    <button class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#involvementCollapseIssues"
+            aria-expanded="false"
+            aria-controls="involvementCollapseIssues">
+      Where can I see what needs work or what issues exist with the data?
+    </button>
+  </h2>
+  <div id="involvementCollapseIssues"
+       class="accordion-collapse collapse"
+       aria-labelledby="involvementHeadingIssues"
+       data-bs-parent="#involvementAccordion">
+    <div class="accordion-body">
+      <p>
+        We keep track of known problems, missing details, suggested improvements, and feature ideas
+        on the project’s issue tracker:
+      </p>
+
+      <p>
+        <a href="https://github.com/ptoone/annex-tree-map/issues" 
+           target="_blank" rel="noopener">
+          View open issues on GitHub →
+        </a>
+      </p>
+
+      <p>You’ll find things like:</p>
+      <ul>
+        <li>Trees missing DBH or height measurements</li>
+        <li>Species marked as “unknown” or needing verification</li>
+        <li>Incorrect coordinates or possible duplicate trees</li>
+        <li>Requests for new features (layers, filters, etc.)</li>
+        <li>Formatting or cleanup tasks in the JSON data</li>
+      </ul>
+
+      <hr>
+
+      <h5 class="fw-bold mt-3">Mini-tutorial: How to help with issues (even if you’re not technical)</h5>
+
+      <p class="mb-2">
+        You don’t need coding experience or a GitHub account to help improve the map.
+        Here’s how you can participate:
+      </p>
+
+      <ol>
+        <li>
+          <strong>Browse the open issues</strong>  
+          Visit the issues page and look through items labeled “data cleanup,” “unknown species,” 
+          “height missing,” or “needs verification.”
+        </li>
+
+        <li>
+          <strong>If you have info to add, just leave a comment</strong>  
+          Click an issue and scroll to the bottom.  
+          You can write something like:
+          <br>
+          <em>“Tree #142 is a Norway Maple, approx. 12 m tall, DBH ≈ 28 cm. Coordinates confirmed.”</em>
+        </li>
+
+        <li>
+          <strong>No GitHub account?</strong>  
+          You can still help!  
+          Just copy the issue link and email or message someone with access
+          (or submit updated JSON using the generator above).
+        </li>
+
+        <li>
+          <strong>To help close an issue</strong>  
+          If you see an issue that’s been resolved — for example, a tree now has correct data —  
+          simply comment:
+          <br>
+          <em>“This looks fixed—height + DBH added. Safe to close.”</em>
+          <br>
+          Someone with access will close it.
+        </li>
+
+        <li>
+          <strong>Not sure?</strong>  
+          Add your observations anyway. Even partial info (e.g., “tree is definitely a spruce”)  
+          is useful.
+        </li>
+      </ol>
+
+      <p class="mb-0">
+        Every bit of help improves the accuracy and usefulness of the Annex Tree Map —
+        even small comments or corrections make a big difference.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Q: Start a tree map in my own community -->
+<div class="accordion-item">
+  <h2 class="accordion-header" id="involvementHeadingCommunity">
+    <button class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#involvementCollapseCommunity"
+            aria-expanded="false"
+            aria-controls="involvementCollapseCommunity">
+      Can I start a tree map for my own community?
+    </button>
+  </h2>
+  <div id="involvementCollapseCommunity"
+       class="accordion-collapse collapse"
+       aria-labelledby="involvementHeadingCommunity"
+       data-bs-parent="#involvementAccordion">
+    <div class="accordion-body">
+      <p>
+        Yes! This project is built entirely with <strong>open source tools</strong> that are free to use,
+        and the source code is released under a <strong>copyleft license</strong>. That means you’re free
+        to reuse, adapt, and build on it, as long as you keep it open for others too.
+      </p>
+      <p>
+        To create a tree map for your community, you can:
+      </p>
+      <ol>
+        <li>
+          <strong>Clone the repository</strong> from GitHub and run it as-is.
+        </li>
+        <li>
+          <strong>Replace the tree data</strong> with your own JSON file for your neighbourhood,
+          park, campus, or city.
+        </li>
+        <li>
+          <strong>Customize the text and branding</strong> (name, footer, About page) to match
+          your community project.
+        </li>
+      </ol>
+      <p>
+        Hosting is flexible:
+      </p>
+      <ul>
+        <li>Use your own <strong>custom domain</strong> on any web host you like.</li>
+        <li>Host it for free on <strong>GitHub Pages</strong>.</li>
+        <li>Or set it up via <strong><a href="https://xyz.am" target="_blank" rel="noopener">XYZ.AM</a></strong> for an easy custom URL.</li>
+      </ul>
+      <p class="mb-0">
+        If you do start a new tree map, we’d love to hear about it—these tools are meant to
+        be reused, remixed, and shared in as many communities as possible.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+  </div>
+</section>
+
+    
+    <!-- Easy Ways to Measure a Tree's Height -->
+<section class="mt-5">
+  <h2 class="h3 mb-4">Easy Ways to Measure a Tree’s Height</h2>
+  <p class="mb-4">
+    You don’t need special equipment to estimate a tree’s height for the Annex Tree Map.
+    Here are four simple methods that use everyday tools like your phone, a stick, or shadows.
+  </p>
+
+  <div class="accordion" id="treeHeightAccordion">
+
+    <!-- Method 1: Phone Compass / Clinometer -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="treeHeightHeadingOne">
+        <button class="accordion-button" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#treeHeightCollapseOne"
+                aria-expanded="true"
+                aria-controls="treeHeightCollapseOne">
+          1. Phone Compass / Clinometer (Most Accurate)
+        </button>
+      </h2>
+      <div id="treeHeightCollapseOne"
+           class="accordion-collapse collapse show"
+           aria-labelledby="treeHeightHeadingOne"
+           data-bs-parent="#treeHeightAccordion">
+        <div class="accordion-body">
+          <p>
+            This method uses your smartphone’s built-in compass or a free clinometer app.
+            It’s one of the most accurate DIY options.
+          </p>
+          <p><strong>You need:</strong> a smartphone and a way to measure or pace out distance.</p>
+          <ol>
+            <li>Stand a known distance from the tree (e.g., <strong>10&nbsp;m</strong> or <strong>33&nbsp;ft</strong>).</li>
+            <li>Open your phone’s <strong>level/angle/clinometer</strong> tool.</li>
+            <li>Hold the phone at <strong>eye height</strong> and aim at the highest point of the tree.</li>
+            <li>Note the <strong>angle</strong> (θ) displayed on the screen.</li>
+            <li>Use this formula:
+              <pre class="mb-1"><code>Tree height ≈ (Distance × tan θ) + Eye height</code></pre>
+            </li>
+          </ol>
+          <p class="mb-1"><strong>Example:</strong></p>
+          <ul class="mb-0">
+            <li>Distance to tree: 10&nbsp;m</li>
+            <li>Angle: 40°</li>
+            <li>Eye height: 1.6&nbsp;m</li>
+          </ul>
+          <p class="mt-2 mb-0">
+            Tree height ≈ (10 × tan 40°) + 1.6 ≈ <strong>10&nbsp;m</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Method 2: Shadow Method -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="treeHeightHeadingTwo">
+        <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#treeHeightCollapseTwo"
+                aria-expanded="false"
+                aria-controls="treeHeightCollapseTwo">
+          2. Shadow Method (Fast & No Apps Needed)
+        </button>
+      </h2>
+      <div id="treeHeightCollapseTwo"
+           class="accordion-collapse collapse"
+           aria-labelledby="treeHeightHeadingTwo"
+           data-bs-parent="#treeHeightAccordion">
+        <div class="accordion-body">
+          <p>
+            This works best on a sunny day and uses simple proportions.
+          </p>
+          <ol>
+            <li>Measure the <strong>length of the tree’s shadow</strong>.</li>
+            <li>Measure the <strong>shadow of a known object</strong>, like yourself or a stick of known height.</li>
+            <li>Use the proportional formula:
+              <pre class="mb-1"><code>Tree height = (Tree shadow ÷ Your shadow) × Your height</code></pre>
+            </li>
+          </ol>
+          <p class="mb-1"><strong>Example:</strong></p>
+          <ul class="mb-0">
+            <li>Tree shadow: 12&nbsp;m</li>
+            <li>Your shadow: 2&nbsp;m</li>
+            <li>Your height: 1.75&nbsp;m</li>
+          </ul>
+          <p class="mt-2 mb-0">
+            Tree height = (12 ÷ 2) × 1.75 = <strong>10.5&nbsp;m</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Method 3: Stick / Similar Triangles -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="treeHeightHeadingThree">
+        <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#treeHeightCollapseThree"
+                aria-expanded="false"
+                aria-controls="treeHeightCollapseThree">
+          3. Stick Method (Similar Triangles Trick)
+        </button>
+      </h2>
+      <div id="treeHeightCollapseThree"
+           class="accordion-collapse collapse"
+           aria-labelledby="treeHeightHeadingThree"
+           data-bs-parent="#treeHeightAccordion">
+        <div class="accordion-body">
+          <p>
+            This uses a stick or pencil at arm’s length to create a simple similar-triangles setup.
+          </p>
+          <p><strong>You need:</strong> a straight stick, pencil, or ruler.</p>
+          <ol>
+            <li>Hold the stick vertically at <strong>arm’s length</strong>, so it looks like it “covers” the tree.</li>
+            <li>Walk closer or farther until the <strong>top of the stick lines up with the top of the tree</strong> and the bottom lines up with the base.</li>
+            <li>When the stick visually matches the height of the tree, stop and mark where you stand.</li>
+            <li>Measure or pace the distance from your standing point to the base of the tree.</li>
+          </ol>
+          <p class="mb-0">
+            That distance is approximately the <strong>height of the tree</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Method 4: 90-Degree Bend Method -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="treeHeightHeadingFour">
+        <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#treeHeightCollapseFour"
+                aria-expanded="false"
+                aria-controls="treeHeightCollapseFour">
+          4. 90-Degree Bend Method (No Tools, Kid-Friendly)
+        </button>
+      </h2>
+      <div id="treeHeightCollapseFour"
+           class="accordion-collapse collapse"
+           aria-labelledby="treeHeightHeadingFour"
+           data-bs-parent="#treeHeightAccordion">
+        <div class="accordion-body">
+          <p>
+            This classic field trick works surprisingly well and needs no tools at all.
+          </p>
+          <ol>
+            <li>Face the tree and walk away from it.</li>
+            <li>Bend forward so you’re looking <strong>between your legs</strong> back toward the tree.</li>
+            <li>Slowly walk away from the tree until you can just see the <strong>top of the tree</strong> between your legs.</li>
+            <li>Stop and mark that spot.</li>
+            <li>Measure or pace the distance from that spot back to the tree.</li>
+          </ol>
+          <p class="mb-0">
+            That distance is roughly the <strong>height of the tree</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Measuring DBH (Diameter at Breast Height) -->
+<section class="mt-5">
+  <h2 class="h3 mb-4">Measuring DBH (Diameter at Breast Height)</h2>
+  <p class="mb-4">
+    DBH is a standard way to describe tree size. It means the diameter of the trunk
+    measured at about chest height. Here’s how anyone can measure it for the Annex Tree Map.
+  </p>
+
+  <div class="accordion" id="dbhAccordion">
+
+    <!-- Item 1: What is DBH? -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="dbhHeadingOne">
+        <button class="accordion-button" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#dbhCollapseOne"
+                aria-expanded="true"
+                aria-controls="dbhCollapseOne">
+          1. What is DBH?
+        </button>
+      </h2>
+      <div id="dbhCollapseOne"
+           class="accordion-collapse collapse show"
+           aria-labelledby="dbhHeadingOne"
+           data-bs-parent="#dbhAccordion">
+        <div class="accordion-body">
+          <p>
+            <strong>DBH (Diameter at Breast Height)</strong> is the diameter of the tree trunk measured at
+            <strong>1.3&nbsp;m (about 4.5&nbsp;ft)</strong> above the ground on the uphill side of the tree.
+          </p>
+          <p class="mb-0">
+            We use DBH because it’s a simple, repeatable way for different people to describe the size of the same tree.
+            If you can, measure to the nearest <strong>centimetre</strong> (or half-inch).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 2: Measuring DBH with a Tape -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="dbhHeadingTwo">
+        <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#dbhCollapseTwo"
+                aria-expanded="false"
+                aria-controls="dbhCollapseTwo">
+          2. Measuring DBH with a Measuring Tape (Easiest)
+        </button>
+      </h2>
+      <div id="dbhCollapseTwo"
+           class="accordion-collapse collapse"
+           aria-labelledby="dbhHeadingTwo"
+           data-bs-parent="#dbhAccordion">
+        <div class="accordion-body">
+          <p>
+            This is the simplest method if you have a flexible measuring tape.
+          </p>
+          <ol>
+            <li>Stand on the <strong>uphill side</strong> of the tree (if the ground is sloped).</li>
+            <li>Find <strong>1.3&nbsp;m / 4.5&nbsp;ft</strong> above the ground. This is breast height.</li>
+            <li>Wrap the tape <strong>around the trunk</strong> at that height to measure the <strong>circumference</strong>.</li>
+            <li>Record the circumference (C) in <strong>centimetres</strong> or <strong>inches</strong>.</li>
+            <li>Convert circumference to diameter using:
+              <pre class="mb-1"><code>Diameter = Circumference ÷ π ≈ Circumference ÷ 3.14</code></pre>
+            </li>
+          </ol>
+          <p class="mb-1"><strong>Example:</strong></p>
+          <ul class="mb-0">
+            <li>Circumference: 94&nbsp;cm</li>
+          </ul>
+          <p class="mt-2 mb-0">
+            Diameter ≈ 94 ÷ 3.14 ≈ <strong>30&nbsp;cm DBH</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 3: No Tape? Use String or a Belt -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="dbhHeadingThree">
+        <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#dbhCollapseThree"
+                aria-expanded="false"
+                aria-controls="dbhCollapseThree">
+          3. No Tape? Use String, Shoelace, or a Belt
+        </button>
+      </h2>
+      <div id="dbhCollapseThree"
+           class="accordion-collapse collapse"
+           aria-labelledby="dbhHeadingThree"
+           data-bs-parent="#dbhAccordion">
+        <div class="accordion-body">
+          <p>
+            You can still measure DBH even without a tape measure.
+          </p>
+          <ol>
+            <li>At <strong>1.3&nbsp;m / 4.5&nbsp;ft</strong> above the ground, wrap a <strong>string, shoelace, belt,
+                or cord</strong> around the trunk once.</li>
+            <li>Mark or pinch the point where it completes the circle.</li>
+            <li>Lay the string flat and measure its length with any ruler or tape at home.</li>
+            <li>That length is the <strong>circumference</strong>. Convert to diameter with:
+              <pre class="mb-1"><code>Diameter = Circumference ÷ 3.14</code></pre>
+            </li>
+          </ol>
+          <p class="mb-0">
+            If you don’t want to do the math, you can simply submit the <strong>circumference</strong> and we can
+            convert it to DBH later.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 4: Tricky Trees (Slopes, Branches, Multi-stems) -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="dbhHeadingFour">
+        <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#dbhCollapseFour"
+                aria-expanded="false"
+                aria-controls="dbhCollapseFour">
+          4. Tricky Cases: Slopes, Low Branches, and Multi-Stem Trees
+        </button>
+      </h2>
+      <div id="dbhCollapseFour"
+           class="accordion-collapse collapse"
+           aria-labelledby="dbhHeadingFour"
+           data-bs-parent="#dbhAccordion">
+        <div class="accordion-body">
+          <p>
+            Not all trees are straight and simple. Here are some quick guidelines:
+          </p>
+          <ul>
+            <li>
+              <strong>Tree on a slope:</strong> Measure 1.3&nbsp;m / 4.5&nbsp;ft from the ground on the
+              <strong>uphill side</strong> of the tree.
+            </li>
+            <li>
+              <strong>Big bump or branch right at breast height:</strong> Move the measuring point
+              <strong>a little up or down</strong> until you find the nearest “normal” section of trunk and note this.
+            </li>
+            <li>
+              <strong>Leaning tree:</strong> Still measure along the trunk at 1.3&nbsp;m / 4.5&nbsp;ft from the
+              ground, not straight vertically.
+            </li>
+            <li>
+              <strong>Multi-stem tree (splits near the base):</strong> If several stems split below breast height,
+              measure the <strong>diameter of each main stem</strong> separately and note that it is a multi-stem tree.
+            </li>
+          </ul>
+          <p class="mb-0">
+            If you’re unsure, you can add a short note in your submission (e.g. “multi-stem maple,
+            DBH for largest stem ≈ 25&nbsp;cm”).
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  </div>
+</section>
+
+
+    </div>
+
+    <!-- Footer note -->
+    <div class="text-center text-muted small mt-4">
+  Powered by 100% renewable energy and built with 
+  <a href="https://www.theara.org" target="_blank" rel="noopener">The Ara volunteer data</a>, 
+  <a href="https://www.openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a>, 
+  <a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>, 
+  <a href="https://xyz.am" target="_blank" rel="noopener">XYZ AM</a> 
+  and a lot of trees in the Annex 🌳
+    </div>
+
+  </main>
+
+  <!-- Bootstrap JS (incl. Popper) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    // --- Embed code logic ---
+    const embedUrlInput = document.getElementById('embedUrl');
+    const embedCodeTextarea = document.getElementById('embedCode');
+    const copyEmbedBtn = document.getElementById('copyEmbedBtn');
+
+    function updateEmbedCode() {
+      const url = embedUrlInput.value.trim();
+      const code =
+`<iframe
+  src="${url}"
+  width="100%"
+  height="600"
+  style="border:0;"
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>`;
+      embedCodeTextarea.value = code;
+    }
+
+    embedUrlInput.addEventListener('input', updateEmbedCode);
+    updateEmbedCode(); // initial
+
+    copyEmbedBtn.addEventListener('click', () => {
+      embedCodeTextarea.select();
+      document.execCommand('copy');
+    });
+
+    // --- JSON generator logic ---
+    const jsonForm = document.getElementById('jsonForm');
+    const jsonOutput = document.getElementById('jsonOutput');
+    const copyJsonBtn = document.getElementById('copyJsonBtn');
+    const clearFormBtn = document.getElementById('clearFormBtn');
+
+    jsonForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(jsonForm);
+      const props = {};
+
+      // Collect properties exactly as in the existing dataset
+      [
+        'Date',
+        'tree_no',
+        'house_number',
+        'street_code',
+        'species_code',
+        'tree_name',
+        'n_o_s',
+        'DBH',
+        'total_height',
+        'Comments',
+        'X coordinate',
+        'Y coordinate'
+      ].forEach(key => {
+        const val = formData.get(key) || '';
+        props[key] = val;
+      });
+
+      const x = parseFloat(props['X coordinate']);
+      const y = parseFloat(props['Y coordinate']);
+
+      const feature = {
+        type: 'Feature',
+        properties: props,
+        geometry: {
+          type: 'Point',
+          coordinates: [
+            isNaN(x) ? 0 : x,
+            isNaN(y) ? 0 : y
+          ]
+        }
+      };
+
+      jsonOutput.value = JSON.stringify(feature, null, 2);
+    });
+
+    copyJsonBtn.addEventListener('click', () => {
+      jsonOutput.select();
+      document.execCommand('copy');
+    });
+
+    clearFormBtn.addEventListener('click', () => {
+      jsonForm.reset();
+      jsonOutput.value = '';
+    });
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"758e5d13dec64ad9a3e57aeed73c3618","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
