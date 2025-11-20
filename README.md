@@ -167,7 +167,7 @@ Issues have been documented in GitHub for transparency.
 
 (Optional — add map screenshot here)
 
-![Annex Tree Map Screenshot](screenshot.png)
+![Annex Tree Map Screenshot](https://github.com/ptoone/annex-tree-map/blob/main/data/annextrees.png?raw=true)
 
 📝 License
 
