@@ -139,13 +139,14 @@ Use the companion tool:
 🔗 Embedding the Map
 
 You can embed the tree map in any site using:
-
+```html
 <iframe
   src="https://annextreemap.xyz.am/"
   width="100%"
   height="600"
   style="border:0;"
 ></iframe>
+```
 
 🧪 Data Quality Notes
 
