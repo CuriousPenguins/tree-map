@@ -107,6 +107,8 @@ Scroll to the JSON Generator tool.
 
 It will output a properly formatted GeoJSON fragment like:
 
+```html
+
 {
   "type": "Feature",
   "properties": {
@@ -128,7 +130,7 @@ It will output a properly formatted GeoJSON fragment like:
     "coordinates": [ -79.405501, 43.673770 ]
   }
 }
-
+```
 
 Paste this directly into annex-trees.json.
 
@@ -167,8 +169,6 @@ Duplicate coordinates due to surveying from the same point
 Issues have been documented in GitHub for transparency.
 
 📸 Screenshot
-
-(Optional — add map screenshot here)
 
 ![Annex Tree Map Screenshot](https://github.com/ptoone/annex-tree-map/blob/main/data/annextrees.png?raw=true)
 
