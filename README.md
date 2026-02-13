@@ -100,3 +100,38 @@ The system uses standard **GeoJSON**. You can generate this using QGIS, Python, 
     }
   ]
 }
+
+
+### 🧰 Adding New Trees
+Don't like writing JSON by hand?
+Visit the **Contribute** page on your deployment to use the built-in generator form.
+
+---
+
+### 🤝 Contributing
+We welcome contributions to the code or the dataset!
+
+#### For Developers (Code)
+* **Frontend:** Bootstrap 5, Leaflet JS.
+* **Backend:** PHP 7.4+ (Strict Types).
+* **To Do:** We are looking for help improving the mobile filter UI and adding a dark mode for the map.
+
+#### For Arborists/Volunteers (Data)
+If you see an error in the live map:
+1. Click the **"Suggest an Edit"** button on the website.
+2. Fill out the form (Tree #, correct species, or new measurements).
+3. This will generate a GitHub Issue for our maintainers to review.
+
+---
+
+### 🔗 Embedding
+You can embed the tree map on your community association or BIA website using an iframe:
+
+```html
+<iframe
+  src="[https://annextreemap.xyz.am/](https://annextreemap.xyz.am/)"
+  width="100%"
+  height="600"
+  style="border:0; border-radius: 8px;"
+  loading="lazy"
+></iframe>
